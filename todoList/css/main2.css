@@ -1,0 +1,200 @@
+:root {
+    --secondary-color: rgb(255, 6, 6); 
+    --primary-color: rgb(248, 102, 102); 
+}
+
+.footer {
+    background-color: var(--secondary-color); /* Cor secundária */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Estilo para o menu lateral */
+.menu {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: var(--secondary-color); /* Cor secundária */
+    transition: left 0.3s ease-in-out;
+    z-index: 2;
+}
+
+.menu.active {
+    left: 0;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.menu ul li {
+    margin: 20px 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.menu a:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para o botão do menu */
+.menu-button {
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.menu-button .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.menu-button.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-button.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-button.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--primary-color);
+    font: bold 2rem 'Open Sans', sans-serif;
+}
+
+.container {
+    display: flex;
+    width: 50vw;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    gap: 15px;
+}
+
+.todo_title {
+    background-color: var(--secondary-color);
+    color: white;
+    width: 100%;
+    height: auto; /* Altere de 80px para 'auto' para que a altura se ajuste ao conteúdo */
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    box-shadow: 1px 1px 5px var(--secondary-color);
+    font-size: 3rem;
+    padding: 10px; /* Adicione espaço interno para melhorar o espaçamento */
+}
+
+.todo_title {
+    color: #fff; /* Define a cor do texto como branco */
+}
+
+.todo_list {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.todo_item {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    box-shadow: 1px 1px 5px var(--secondary-color);
+}
+
+.todo_item > div {
+    width: 80%;
+    word-wrap: break-word; 
+    white-space: pre-line; 
+}
+
+.todo_item:hover {
+    cursor: pointer;
+    transition: all .5s ease;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.todo_item > input[type='text'] {
+    border: none;
+    width: 80%;
+    font: inherit;
+}
+
+.todo_item > input[type='button'],
+.todo_item > input[type='checkbox'] {
+    width: 30px;
+    height: 30px;
+    font: inherit;
+}
+
+.todo__item > input[type='checkbox']:checked + div {
+    text-decoration: line-through;
+}
+
+.todo_new-item {
+    display: flex;
+    background-color: #10ee1b;
+    width: 100%;
+    height: 70px;
+    justify-content: space-evenly;
+    padding: 10px 0;
+    box-shadow: 1px 1px 5px var(--secondary-color);
+    margin: 10px;
+    font: inherit;
+}
+
+.todo_new-item > input {
+    background-color: #10ee1b;
+    border: none;
+    width: 80%;
+    outline: none;
+    font: inherit;
+}
+
+.todo_new-item > input::placeholder {
+    font-style: italic;
+    font-weight: normal;
+}
+
